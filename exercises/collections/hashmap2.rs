@@ -12,7 +12,6 @@
 // Execute the command `rustlings hint hashmap2` if you need
 // hints.
 
-// I AM NOT DONE
 
 use std::collections::HashMap;
 
@@ -38,6 +37,8 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         // TODO: Put new fruits if not already present. Note that you
         // are not allowed to put any type of fruit that's already
         // present!
+        //https://doc.rust-lang.org/stable/book/ch08-03-hash-maps.html#only-inserting-a-value-if-the-key-has-no-value
+        basket.entry(fruit).or_insert(1);
     }
 }
 
@@ -76,6 +77,7 @@ mod tests {
         let mut basket = get_fruit_basket();
         fruit_basket(&mut basket);
         let count = basket.values().sum::<u32>();
+        println!("{}", count);
         assert!(count > 11);
     }
 }
