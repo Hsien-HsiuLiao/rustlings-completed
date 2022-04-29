@@ -174,5 +174,5 @@ Thanks goes to the wonderful people listed in [AUTHORS.md](./AUTHORS.md) 🎉
 
 ### to review
 
-primitive types4
-vec2
+* primitive types4
+* vec2
