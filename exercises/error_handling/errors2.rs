@@ -16,7 +16,6 @@
 // There are at least two ways to implement this that are both correct-- but
 // one is a lot shorter! Execute `rustlings hint errors2` for hints to both ways.
 
-// I AM NOT DONE
 
 use std::num::ParseIntError;
 
@@ -24,14 +23,15 @@ pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
 //    let qty = item_quantity.parse::<i32>()?;
-      let qty = item_quantity.parse::<i32>();
+    
+    let qty = item_quantity.parse::<i32>();
 
-match qty {
-    Ok(qty) => Ok(qty * cost_per_item + processing_fee),
-    Err(e) =>  Err(e),
-}
+    let qty = match qty {
+        Ok(qty) => qty,
+        Err(e) =>  return Err(e),
+    };
 
-//    Ok(qty * cost_per_item + processing_fee)
+   Ok(qty * cost_per_item + processing_fee)
 }
 
 #[cfg(test)]
