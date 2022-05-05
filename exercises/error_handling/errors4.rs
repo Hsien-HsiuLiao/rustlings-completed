@@ -1,7 +1,6 @@
 // errors4.rs
 // Make this test pass! Execute `rustlings hint errors4` for hints :)
 
-// I AM NOT DONE
 
 #[derive(PartialEq, Debug)]
 struct PositiveNonzeroInteger(u64);
@@ -14,7 +13,17 @@ enum CreationError {
 
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
-        Ok(PositiveNonzeroInteger(value as u64))
+        match value {
+        1.. => Ok(PositiveNonzeroInteger(value as u64)),
+        val if val < 0 => Err(CreationError::Negative),
+        0 => Err(CreationError::Zero),
+        _ => unreachable!()
+            /*
+            Another caveat is that rustc doesn’t know how to check exhaustive number matches. 
+            So even if you think you’ve covered everything, you’re going to need a final catch-all match – like _ => unreachable!().
+            https://users.rust-lang.org/t/help-matching-on-negative-integer/22127/2
+            */
+        }
     }
 }
 
