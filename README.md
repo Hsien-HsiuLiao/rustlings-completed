@@ -177,3 +177,4 @@ Thanks goes to the wonderful people listed in [AUTHORS.md](./AUTHORS.md) 🎉
 * primitive types4
 * vec2
 * errors5, https://doc.rust-lang.org/stable/rust-by-example/error/multiple_error_types/boxing_errors.html , https://doc.rust-lang.org/stable/rust-by-example/error/multiple_error_types/reenter_question_mark.html
+* iterators 2
